@@ -1,1 +1,51 @@
-<p class="text-center pt-20">home works!</p>
+<main class="text-center pt-20">
+  <h1 class="text-3xl font-bold mb-4">{{ title() }}</h1>
+
+  <div>
+    <p class="text-lg mb-4">Welcome to the {{ title() }} page!</p>
+  </div>
+  <form>
+    <!-- <label for="name">Name:</label> -->
+    <div class="flex justify-center space-x-2">
+      <input
+        type="text"
+        id="name"
+        name="name"
+        placeholder="Buscar Cliente pelo nome"
+        class="border border-gray-300 rounded px-4 py-2"
+      />
+      <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 rounded">
+        Submit
+      </button>
+      <button type="button" class="bg-gray-500 hover:bg-gray-700 text-white px-4 py-2 rounded">
+        Limpar
+      </button>
+    </div>
+  </form>
+  <section class="border p-4 mx-6 h-80 border-gray-300 mt-4">
+    <table class="w-full border-collapse border border-gray-300">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Cadastro</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>John Doe</td>
+          <td>john@example.com</td>
+          <td>123-456-7890</td>
+          <td>01/01/2024</td>
+          <td>
+            <button class="bg-blue-500 hover:bg-blue-700 text-white px-2 py-1 rounded">Edit</button>
+            <button class="bg-red-500 hover:bg-red-700 text-white px-2 py-1 rounded">Delete</button>
+          </td>
+        </tr>
+        <!-- Table rows will go here -->
+      </tbody>
+    </table>
+  </section>
+</main>
