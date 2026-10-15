@@ -29,7 +29,7 @@
           <th>Name</th>
           <th>Email</th>
           <th>Phone</th>
-          <th>Cadastro</th>
+          <th class="hidden sm:inline-block">Cadastro</th>
           <th>Ações</th>
         </tr>
       </thead>
@@ -39,7 +39,7 @@
             <td>{{ item.nome }}</td>
             <td>{{ item.email }}</td>
             <td>{{ item.telefone }}</td>
-            <td>{{ item.dataCadastro }}</td>
+            <td class="hidden sm:inline-block">{{ item.dataCadastro }}</td>
             <td>
               <button class="bg-blue-500 hover:bg-blue-700 text-white px-2 py-1 rounded">
                 Edit
