@@ -4,7 +4,7 @@
   <div>
     <p class="text-lg mb-4">Welcome to the {{ title() }} page!</p>
   </div>
-  <form>
+  <form (ngSubmit)="pesquisar()">
     <!-- <label for="name">Name:</label> -->
     <div class="flex justify-center space-x-2">
       <input
@@ -12,12 +12,17 @@
         id="name"
         name="name"
         placeholder="Buscar Cliente pelo nome"
+        [(ngModel)]="nomeBusca"
         class="border border-gray-300 rounded px-4 py-2"
       />
       <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 rounded">
         Submit
       </button>
-      <button type="button" class="bg-gray-500 hover:bg-gray-700 text-white px-4 py-2 rounded">
+      <button
+        type="button"
+        (click)="limpar()"
+        class="bg-gray-500 hover:bg-gray-700 text-white px-4 py-2 rounded"
+      >
         Limpar
       </button>
     </div>
@@ -33,14 +38,14 @@
           <th>Ações</th>
         </tr>
       </thead>
-      <tbody>
-        @for (item of clientes; track item.id) {
-          <tr>
+      <tbody class="">
+        @for (item of clientesFiltrados; track item.id) {
+          <tr class="hover:bg-gray-100 border-b border-gray-300 mb-20">
             <td>{{ item.nome }}</td>
             <td>{{ item.email }}</td>
             <td>{{ item.telefone }}</td>
             <td class="hidden sm:inline-block">{{ item.dataCadastro }}</td>
-            <td>
+            <td class="">
               <button class="bg-blue-500 hover:bg-blue-700 text-white px-2 py-1 rounded">
                 Edit
               </button>
@@ -48,10 +53,6 @@
                 Delete
               </button>
             </td>
-          </tr>
-        } @empty {
-          <tr>
-            <td colspan="5" class="text-center">Nenhum registro encontrado.</td>
           </tr>
         }
       </tbody>
